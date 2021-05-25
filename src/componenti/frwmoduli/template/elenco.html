@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js"></script>
+
+	<title>Moduli</title>
+
+	<script language="JavaScript" src="template/elenco.js"></script>
+
+	</head>
+	<body>
+		<div class='panel'>
+			<form style='margin:0px; padding:0px;' id='filtri' method='get' name='filtri'>
+			<table>
+			<tr>
+				<td>Visibilità: ##combotipo##</td>
+				<td>Cerca: <input type="text" name="keyword" id="keyword" value="##keyword##" onkeypress="submitonenter('filtri',event,this)"/></td><td>&nbsp; &nbsp; &nbsp; Strumenti: </td><td>##bottoni1##</td><td>##bottoni2##</td>
+			</tr>
+			</table>
+			</form>
+		</div>
+		<div class="corpo">
+			##corpo##
+		</div>
+
+	</body>
+</html>

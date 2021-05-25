@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css?okx"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css?oox"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js"></script>
+	<script>
+		// funzioni utilizzata per le spunte della griglia
+		function confermaDelete(id) {
+			if (gconfirm("Do you confirm to delete this banner?","document.location.href = 'index.php?op=elimina&id="+id+"'")) {}
+		}
+		function confermaDeleteCheck(theForm) {
+			confermaDeleteCheckMsg(theForm, "Do you confirm to delete the selected banners?");
+		}
+	</script>
+	<title>##TITLE##</title>
+
+	<script type="text/javascript" src="//code.highcharts.com/highcharts.js"></script>
+
+	<style>
+		div.small {font-size:.7em}
+		a.ricarica { background-image:url(../../icons/curve19.png);}
+	</style>
+
+	<script language="JavaScript" src="./template/elenco.js?v=##rand##"></script>
+
+	<style>
+		table.griglia a.play { background:transparent url(../../icons/play35.png) 0 0 no-repeat;  background-size:20px 20px; display:inline-block; width:20px; height:20px; text-indent:-999px;overflow:hidden;vertical-align:middle}
+		table.griglia .td {min-height:50px!important}
+		table.griglia div.more {display:none}
+		table.griglia div.more a {
+			display:inline-block; width:auto; color:#333300;font-weight:normal;font-size:12px;text-transform:uppercase;
+			background:transparent url(../../icons/round31.png) 0 0 no-repeat;  background-size:20px 20px; padding-left:24px; line-height:20px;
+		}
+		table.griglia div.more a.go {background-image:url(../../icons/play35.png);} 
+		table.griglia .pic img {max-width:100px;max-height:50px;}
+	</style>
+	<script>
+
+	function setStato (c,id) {
+		if(c=='go') jQuery('#cell_' + id + '_10').html("<span class=\"labelgray\">restarting...</span>");
+		if(c=='pause') jQuery('#cell_' + id + '_10').html("<span class=\"labelgray\">pausing...</span>");
+		jQuery.ajax("ajax.jobs.php?op="+c+"&id="+id);
+	}
+
+	$(document).ready(function() {
+		$('table.griglia td').mouseenter(function(){
+			$(this).find(".more").show();
+		});
+		$('table.griglia td').mouseleave(function(){
+			$(this).find(".more").hide();
+		});
+	} );
+	</script>
+</head>
+	<body>
+		<div class='panel'>
+			<form id='filtri' method='get' name='filtri'>
+			<table>
+
+			<tr>
+				<td><h1 class='title'>##TITLE##</h1></td>
+				<td>Filter: ##combotipo##</td>
+				<td>Find: <input type="text" name="keyword" id="keyword" value="##keyword##" onkeypress="submitonenter('filtri',event,this)"/></td><td>&nbsp; &nbsp; &nbsp; Tools: </td><td>##bottoni1##</td>
+				<td>##bottoni2##</td>
+			</tr>
+			</table>
+			</form>
+		</div>
+		<div class="corpo">
+			##corpo##
+		</div>
+		<div id='tempdati' style='display:none'></div>
+	</body>
+</html>

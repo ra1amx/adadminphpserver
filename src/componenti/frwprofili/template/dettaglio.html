@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js"></script>
+
+	<title>Profili</title>
+
+	<script language="JavaScript" src="##root##src/template/controlloform.js"></script>
+	<script language="JavaScript" src="template/dettaglio.js"></script>
+</head>
+<body>
+<div class='panel'>
+	<table>
+		<tr>
+			<td><a href="javascript:submitform()" class='salva'>Salva</a>
+			</td><td>
+			<a href="##gestore##" class='annulla'>Annulla</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class='corpo'>
+<form name="dati" action="##gestore##" method="POST" onsubmit="return false">
+	<input type="hidden" name="id" value="##id##">
+	<input type="hidden" name="op" value="##action##">
+	<fieldset class='mainfieldset'>
+	<legend>Informazioni sul profilo</legend>
+		<table>
+			<tr>
+				<td>ID</td>
+				<td>&nbsp;&nbsp;&nbsp;</td>
+				<td><input type="text" name="idprofilo" maxlength="20" size="20" value="##idprofilo##">
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>Label</td>
+				<td>&nbsp;&nbsp;&nbsp;</td>
+				<td>
+					<input type="text" name="label" maxlength="20" size="20" value="##label##">
+				</td>
+			</tr>
+			<tr>
+				<td>Descrizione</td>
+				<td>&nbsp;&nbsp;&nbsp;</td>
+				<td><input type="text" name="descrizione" value="##descrizione##" size="60" maxlength="255">
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+	<fieldset class='mainfieldset'>
+		<legend>Quali profili può editare?</legend>
+		<table>
+			<tr valign="top">
+				<td>Profili</td>
+				<td>&nbsp;&nbsp;&nbsp;</td>
+				<td>
+					##elencoprofili##
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+</form>
+
+</div>
+<script language="javascript">
+checkTop();
+</script>
+</body>
+</html>

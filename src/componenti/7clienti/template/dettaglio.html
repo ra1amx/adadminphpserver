@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js"></script>
+
+
+	<title>##TITLE##</title>
+
+</head>
+
+<body>
+<div class='panel'>
+	<table>
+		<tr>
+			<td><h1 class='title'>##TITLE##</h1></td>
+			<td><a href="javascript:checkConStato()" class="salva">Save</a>
+			<td><a href="javascript:saveAndLoad()" class="salva"> Save and refresh</a>
+			</td><td><a href="##gestore##" class="annulla"> Cancel</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="corpo">
+	##STARTFORM##
+	##id##
+	##op##
+	<fieldset class='mainfieldset'>
+		<legend><a href="javascript:;" rel="Client details (+)|Datiprincipali">Client details</a></legend>
+		<div id='Datiprincipali'>
+			<table>
+				<tr>
+					<td valign='top' width='150'>Name</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##de_nome##</td>
+				</tr>
+				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+				<tr>
+					<td valign='top'>Guest users</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>
+						<p class='description'>You can choose guest users who can watch statistics.
+						They have to login into the system.</p>
+						##associa##
+						</td>
+				</tr>
+			</table>
+		</div>
+	</fieldset>
+
+	<!-- <fieldset class='mainfieldset'>
+		<legend><a href="javascript:show('Stats')">Stats</a></legend>
+		<div id='Stats'>
+			<table>
+				<tr>
+					<td valign='top' width='150'>Scontri nel gruppo</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##q##</td>
+				</tr>
+			</table>
+		</div>
+	</fieldset> -->
+
+	##ENDFORM##
+</div>
+</body>
+</html>

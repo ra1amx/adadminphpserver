@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js"></script>
+
+	<title>##TITLE##</title>
+	
+	<script>	
+		$(document).ready(function() {
+			function setresp () {
+				if($('#respcheck').is(':checked')) {
+					$('#nu_width').val("-1").attr("readonly","readonly");
+				} else {
+					$('#nu_width').removeAttr("readonly");
+				}
+			}
+			$('#respcheck').on('change',function(){
+				setresp();
+				if(!$('#respcheck').is(':checked')) $('#nu_width').val("").focus();
+			});
+			if($('#nu_width').val()!="-1") {
+				$('#respcheck').removeAttr("checked"); 
+			}
+			setresp();
+		} );
+	</script>
+
+	<script>
+		function showmore() {
+			alert("If checked:<br>1) the width of the simple banners will be 100% and height auto;<br>2) the width of the HTML5 banners will be 100% and height fixed to specified height.<br>This behaviour could affect the layout of your site.<br> To use a responsive banner position and make a banner that transforms from a 300x250 to a 900x250 check this flag and then use HTML5 code to handle different window sizes inside your banner, through css media queries.<br> "); 
+		}
+	</script>
+
+</head>
+<body>
+
+<div class='panel'>
+	<table>
+		<tr>
+			<td><h1 class='title'>##TITLE##</h1></td>
+			<td><a href="javascript:checkConStato()" class="salva"> Save</a>
+			<td><a href="javascript:saveAndLoad()" class="salva"> Save and refresh</a>
+			</td><td><a href="##gestore##" class="annulla"> Cancel</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="corpo">
+	##STARTFORM##
+	##id##
+	##op##
+	<fieldset class='mainfieldset'>
+		<legend><a href="javascript:;" rel="Position details (+)|Datiprincipali">Position details</a></legend>
+		<div id='Datiprincipali'>
+			<table>
+				<tr>
+					<td valign='top' width='150'>Position name</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##de_posizione##</td>
+				</tr>
+
+				<tr>
+					<td valign='top'>Javascript</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td><code>&lt;script src="##WWW##/adserve.php?f=##IDPOS##"&gt;/*##LABEL##*/&lt;/script&gt;</code>
+					<p class='description'>Embed this script in your site to deliver banners.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign='top'>Size</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>Width: ##nu_width##px &nbsp;&nbsp;&nbsp; Height:##nu_height##px
+					</td>
+				</tr>
+				<tr>
+					<td valign='top'><br>Responsive</td>
+					<td>&nbsp;&nbsp;&nbsp;</td><td><br>
+					
+					<input type="checkbox" checked id='respcheck'/> Check to make it responsive.
+					<p class='description'>Size are used to force the images in simple banners
+					and HTML5 banners (<a href='javascript:;' onclick='showmore()'>more info</a>).</p>
+					</td>
+				</tr>
+
+
+
+
+			</table>
+		</div>
+	</fieldset>
+
+	<!-- <fieldset class='mainfieldset'>
+		<legend><a href="javascript:show('Stats')">Stats</a></legend>
+		<div id='Stats'>
+			<table>
+				<tr>
+					<td valign='top' width='150'>Scontri nel gruppo</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##q##</td>
+				</tr>
+			</table>
+		</div>
+	</fieldset> -->
+
+	##ENDFORM##
+</div>
+</body>
+</html>

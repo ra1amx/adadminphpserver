@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js"></script>
+
+
+	<title>Moduli</title>
+	<script language="JavaScript" src="template/dettaglio.js"></script>
+
+<body>
+<div class='panel'>
+	<table>
+		<tr>
+			<td><a href="javascript:checkConStato()" class='aggiungi'>Salva</a>
+			</td><td><a href="##gestore##" class='annulla'>Annulla</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="corpo">
+	##STARTFORM##
+	##id##
+	##op##
+	<fieldset class='mainfieldset'>
+		<legend><a href="javascript:;" rel="Dettagli modulo (+)|Datiprincipali">Dettagli modulo</a></legend>
+		<div id='Datiprincipali'>
+			<table>
+				<tr>
+					<td valign='top'>Nome (slug)*<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##nome##</td>
+				</tr>
+				<tr>
+					<td valign='top'>Label menù<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##label##</td>
+				</tr>
+				<tr>
+					<td valign='top'>Posizione<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##posizione##</td>
+				</tr>
+				<tr>
+					<td valign='top'>Stato<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##visibile##</td>
+				</tr>
+			</table>
+		</div>
+	</fieldset>
+
+	<fieldset class='mainfieldset'>
+		<legend><a href="javascript:;" rel="Componenti collegati (+)|aggiuntivi">Componenti collegati</a></legend>
+		<div id='aggiuntivi'>
+			##TADDCOLLEGATI##
+			##TCOLLEGATI##
+			
+		</div>
+	</fieldset>
+
+	##ENDFORM##
+</div>
+</body>
+</html>

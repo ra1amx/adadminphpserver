@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css?##rand##"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js?v=##rand##"></script>
+
+	<title>##TITLE##</title>
+	
+	<style>
+		a.stats {
+			background: transparent url(../../icons/increasing5.png) 0 0 no-repeat;
+			background-size: 20px 20px;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			text-indent:-999px;
+			overflow:hidden;
+			vertical-align:middle;
+		}
+		#de_codicescript {
+			font-family:'Courier New',monospace; font-size:12px!important;
+		}
+	</style>
+
+	<script>
+		function showmore() {
+			alert("HTML5 banners can be used by uploading a ZIP archive that must include an <b>index.html</b> file which could use images, javascript and css. All images and needed files must be included in the archive in the root with the index.html file. Do not create folders inside the zip archive.<br> You can made responsive banners using CSS design media queries and a responsive banner position. You can use this click-tag in your html to track clicks: <code>##URLFORTRACKING##</code>"); 
+		}
+	</script>
+</head>
+<div class='panel'>
+	<table>
+		<tr>
+				<td><h1 class='title'>##TITLE##</h1></td>
+			<td><a href="javascript:checkConStato()" class="salva"> Save</a>
+			<td><a href="javascript:saveAndLoad()" class="salva"> Save and reopen</a>
+			</td><td><a href="##gestore##" class="annulla"> Cancel</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="corpo">
+	##STARTFORM##
+	##id##
+	##op##
+	<fieldset class='mainfieldset'>
+		<legend><a href="javascript:;" rel="Main data (+)|Datiprincipali">Main data</a></legend>
+		<div id='Datiprincipali'>
+			<table>
+				<tr>
+					<td valign='top'>Banner ID</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td><b>##idid##</b> &nbsp;&nbsp;&nbsp; ClickTag: <code>##URLFORTRACKING##</code>
+					</td>
+				</tr>
+				<tr>
+					<td valign='top'>Position*<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##cd_posizione##&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Status*&nbsp;&nbsp;&nbsp;##fl_stato##
+					</td>
+				</tr>
+				<tr>
+					<td valign='top'>Title and campaign*<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##de_nome##&nbsp;&nbsp;&nbsp;##cd_campagna##</td>
+				</tr>
+				<tr>
+					<td valign='top'>Price:<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##nu_price####MONEY##</td>
+				</tr>
+
+			</table>
+		</div>
+	</fieldset>
+	<fieldset class='mainfieldset'>
+		<legend><a href="javascript:;" rel="Banner details (+)|Datiprincipali2">Banner details</a></legend>
+		<div id='Datiprincipali2'>
+			<table>
+				<tr>
+					<td valign='top'>Instructions</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>
+					<p>You can create banners in three ways.</p>
+					<ol>
+						<li><p>1. Simple banners: banners made with an image (GIF, JPG or PNG files allowed) and a link. Upload the proper image file (match your banner image size) and fill in the destination link.</p></li>
+						<li><p>2. HTML5 banners: banners made with HTML, you can use images and javascripts (<a href='javascript:;' onclick='showmore()' style='text-decoration:underline'>see more info</a>)</p></li>
+						<li><p>3. External code: banners made with javascript code that deliver ads from other servers, like Google Adsense code.</p></li>
+					</ol>
+					</td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr>
+					<td valign='top'>Link<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##de_url## &nbsp; link target ##de_target##
+					</td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr>
+					<td valign='top'>Media file</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##file##<br/>
+					gif, jpg, png, <acronym title="use ZIP file for HTML5 banenrs">zip</acronym> (##X##x##Y## pixels ##KB## max)<br/>
+						<div class='thumbscontainer' style="width:500px">
+							<span class='maxthumbs'>##max##</span>
+							##thumbs##
+						</div>
+						<p class='description'>Gif, Jpg, Png are used for simple banner (image + link).<br/>
+						ZIP file is used to upload <b>HTML5 banners</b> (<a href='javascript:;' onclick='showmore()'>instructions</a>),
+						remember to use this click-tag in your code to track clicks on AdAdmin: <code>##URLFORTRACKING##</code></p>
+						</td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr>
+					<td valign='top'>Alternative script<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##de_codicescript##
+					<p class='description'>Instead of a simple banner or an HTML5 banner, you can use an <b>external javascript</b> to show a banner, such as the Google Adsense script.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</fieldset>
+	<fieldset class='mainfieldset'>
+		<legend><a href="javascript:;" rel="Limitations (+)|Limiti">Limitations</a></legend>
+		<div id='Limiti'>
+			<table>
+				<tr>
+					<td valign='top'>Period:<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td><table><tr><td>From* ##dt_giorno1##</td><td>&nbsp; to* ##dt_giorno2## (dates included)</td></tr></table></td>
+				</tr>
+				<tr>
+					<td valign='top'>Max total click:<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##nu_maxclick## (use 0 for no limits)</td>
+				</tr>
+				<tr>
+					<td valign='top'>Max total impressions:<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##nu_maxtot## (use 0 for no limits)</td>
+				</tr>
+				<tr>
+					<td valign='top'>Max daily impressions:<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##nu_maxday## (use 0 for no limits)</td>
+				</tr>
+			</table>
+		</div>
+	</fieldset>
+	<fieldset class='mainfieldset' ##hideme##>
+		<legend><a href="javascript:;" rel="Stats (+)|Stats">Stats</a></legend>
+		<div id='Stats'>
+			<table>
+				<tr>
+					<td><acronym title="CPC = Cost Per Click, it's calculated as price / number of clicks"><b>CPC:</b></acronym> ##CPC## ##MONEY## &nbsp;&nbsp;&nbsp;&nbsp; <acronym title="CPM = Cost Per Mille or Cost Per Thousand (CPT), it's calculated as price / number of impression * 1000"><b>CPM:</b></acronym> ##CPM####MONEY## &nbsp;&nbsp;&nbsp;&nbsp; <acronym title="CPD = Cost Per Day, it's calculated as price / days"><b>CPD:</b></acronym> ##CPD####MONEY## </td></tr></table></td>
+				</tr>
+				<tr>
+					<td><b>Impressions:</b> ##nu_pageviews## &nbsp;&nbsp;&nbsp;&nbsp;<b>Clicks:</b> ##nu_clicks## &nbsp;&nbsp;&nbsp;&nbsp;<b>CTR:</b> ##nu_clickthrought##  &nbsp;&nbsp;&nbsp;&nbsp;<b>Days:</b> ##DAYS##<br/>
+						This banner made ##nu_maxday_count## impressions on ##dt_maxday_date##. <a href="./index.php?op=stats&id=##idid##" class='stats'>stats</a>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+	</fieldset>
+	##ENDFORM##
+</div>
+</body>
+</html>

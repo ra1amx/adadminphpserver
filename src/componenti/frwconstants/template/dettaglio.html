@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js"></script>
+
+	<title>##TITLE##</title>
+	<script language="JavaScript" src="template/dettaglio.js"></script>
+	
+</head>
+<body>
+<div class='panel'>
+	<table>
+		<tr>
+			<td><h1 class='title'>##TITLE##</h1></td>
+			<td><a href="javascript:checkConStato()" class="salva">Salva</a>
+			</td><td><a href="##gestore##" class="annulla">Annulla</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="corpo">
+	##STARTFORM##
+	##id##
+	##op##
+	<fieldset class='mainfieldset'>
+		
+			<legend><a href="javascript:;" rel="Settings (+)|Datiprincipali">Settings</a></legend>
+			<div id='Datiprincipali'>
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td colspan='10'>
+						<table>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+								<td></td>
+								<td>Value</td>
+								<td></td>
+								<td align='right'></td>
+							</tr>
+							<tr>
+								<td valign='top'>##const####de_nome##</td>
+								<td>&nbsp;&nbsp;</td>
+								<td>##de_value##</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</fieldset>
+	
+	##ENDFORM##
+</div>
+</body>
+</html>

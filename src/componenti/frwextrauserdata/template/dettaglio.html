@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js"></script>
+
+	<title>More user data</title>
+	
+</head>
+<body>
+<div class='panel'>
+	<table>
+		<tr>
+			<td><h1 class='title'>##TITLE##</h1></td>
+
+			<td><a href="javascript:checkConStato()" class="salva">Save</a>
+			</td><td><a href="../gestioneutenti/index.php" class="annulla">Cancel</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="corpo">
+
+##STARTFORM##
+##id##
+##op##
+<fieldset class='mainfieldset'>
+	<legend>More informations on #nome#</legend>
+	<table>
+		<tr>
+			<td>E-mail</td>
+			<td>&nbsp;&nbsp;&nbsp;</td>
+			<td>##de_email##</td>
+		</tr>
+		<tr>
+			<td>User date creation</td>
+			<td>&nbsp;&nbsp;&nbsp;</td>
+			<td>##dt_datacreazione##</td>
+		</tr>
+	</table>
+</fieldset>
+##ENDFORM##
+</div>
+</body>
+</html>

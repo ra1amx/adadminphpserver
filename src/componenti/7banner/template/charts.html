@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js"></script>
+
+	<title>##TITLE##</title>
+
+	<script type="text/javascript" src="//code.highcharts.com/highcharts.js"></script>
+
+
+	<script type="text/javascript">
+		var chart;
+		$(document).ready(function() {
+		if(gup("op")=="stats") try {
+			//$('div.panel').hide();
+		   chart = new Highcharts.Chart({
+				chart: {
+					zoomType: 'xy',
+					renderTo: 'container'
+				},
+				title: {
+					text: '##NOME## (From ##STARTDATEDATA##)'
+				},
+				xAxis: [{
+					categories: [##GIORNI##],
+					crosshair: true
+				}],
+				yAxis: [{ // Primary yAxis
+					min: 0,
+					labels: {
+						format: '{value}',
+						style: {
+							color: Highcharts.getOptions().colors[1]
+						}
+					},
+					title: {
+						text: 'Click',
+						style: {
+							color: Highcharts.getOptions().colors[1]
+						}
+					}
+				}, { // Secondary yAxis
+					min:0,
+					title: {
+						text: 'Impressions',
+						style: {
+							color: Highcharts.getOptions().colors[0]
+						}
+					},
+					labels: {
+						format: '{value}',
+						style: {
+							color: Highcharts.getOptions().colors[0]
+						}
+					},
+					opposite: true
+				}],
+				tooltip: {
+					shared: true
+				},
+				legend: {
+					layout: 'vertical',
+					align: 'left',
+					x: 120,
+					verticalAlign: 'top',
+					y: 100,
+					floating: true,
+					backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+				},
+				series: [##SERIE##]
+		   });
+		}
+		catch (e) {
+			alert(e);
+		}
+		   
+		   
+		});
+
+	</script>
+
+</head>
+	<body>
+		<div class='panel'>
+			##STARTFORM##
+			##op##
+			<table>
+				<tr>
+				<td><h1 class='title'>##TITLE##</h1></td>
+				<td>Banners of the campaign "##CLIENTE##": ##combobanner##</td>
+				</tr>
+				<tr>
+					<td></td><td><table><tr><td>From ##startdate##</td><td>&nbsp; to ##enddate##</td><td>##SUBMIT##</td></tr></table></td>
+				</tr>
+				<tr>
+				</tr>
+			</table>
+			##ENDFORM##
+		</div>
+		<div class="corpo">
+
+		
+			<div id='container'></div>
+
+
+				##STATSLIST##
+
+
+		</div>
+	</body>
+</html>

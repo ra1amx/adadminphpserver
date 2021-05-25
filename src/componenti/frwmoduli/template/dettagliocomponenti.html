@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="##root##src/template/stile.css"> <!-- stili comuni -->
+	<link rel="stylesheet" type="text/css" href="##root##data/##DOMINIO##/stile.css"/> <!-- stili del tema -->
+
+	##JQUERYINCLUDE##
+	<script language="JavaScript" src="##root##src/template/comode.js"></script>
+
+	<title>Moduli</title>
+	
+	<script language="JavaScript" src="template/dettaglio.js"></script>
+	
+</head>
+<body onload='checkThisCombo()'>
+<div class='panel'>
+	<table>
+		<tr>
+			<td><a href="javascript:checkConStato()" class="salva">Salva</a>
+			</td><td><a href="##ANNULLALINK##" class="annulla">Annulla</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="corpo">
+	##STARTFORM##
+	
+	
+	##op##
+	<fieldset class='mainfieldset'>
+		<legend><a href="javascript:show('Datiprincipali')">Componente</a></legend>
+		<div id='Datiprincipali'>
+			<table>
+				<tr>
+					<td valign='top'>Componente*<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##nomecomponente## ##id## ##cd_item##</td>
+				</tr>
+				<tr>
+					<td valign='top'>Posizione*<br/></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td>##posizione##</td>
+				</tr>
+			</table>
+		</div>
+	</fieldset>
+
+	##ENDFORM##
+</div>
+<script language="javascript">
+checkTop();
+</script>
+</body>
+</html>
